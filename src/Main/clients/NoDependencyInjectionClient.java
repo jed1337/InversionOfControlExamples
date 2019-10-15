@@ -7,7 +7,7 @@ public class NoDependencyInjectionClient {
     private final Service service;
 
     public NoDependencyInjectionClient() {
-//        We are locked to this specific implementation of service
+//        Disadvantage: We are locked or coupled to this specific implementation of service
         this.service = new BasicService();
     }
 

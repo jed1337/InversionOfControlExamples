@@ -5,16 +5,17 @@ import Main.services.Service;
 
 import java.security.InvalidParameterException;
 
+//The client method provides a setter method for the dependency
 public class SetterInjectionClient {
     private Service service;
 
     public void setService(BasicService service) {
-//        We have the option of changing services multiple times
+//        Advantage: freedom and flexibility to manipulate the state
         this.service = service;
     }
 
     public void getInformation(){
-//        It can happen that service is null since it has not been set before
+//        Disadvantage. It is hard to ensure that all dependencies are provided before the client is used
         if (service == null) {
             throw new InvalidParameterException("Service is null");
         }
