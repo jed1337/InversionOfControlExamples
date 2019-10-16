@@ -7,6 +7,8 @@ import Main.services.Service;
 public class ConstructorInjectionClient {
     private final Service service;
 
+//    Control shifts from the ConstructorInjectionClient to the classes that call it
+//    Main is our IoC container
     public ConstructorInjectionClient(Service service) {
 //        Advantage: Guarantees that the client is in a valid state
 //        We can set what type of service we want
