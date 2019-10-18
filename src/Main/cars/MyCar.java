@@ -1,6 +1,6 @@
 package Main.cars;
 
-public class BasicCar implements Car {
+public class MyCar implements Car {
     @Override
     public String getInformation() {
         return "My car";
