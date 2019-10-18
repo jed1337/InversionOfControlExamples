@@ -1,25 +1,24 @@
 package Main.clients;
 
-import Main.services.BasicService;
-import Main.services.Service;
+import Main.cars.Car;
 
 import java.security.InvalidParameterException;
 
 //The client method provides a setter method for the dependency
 public class SetterInjectionClient {
-    private Service service;
+    private Car car;
 
-    public void setService(BasicService service) {
+    public void setCar(Car car) {
 //        Advantage: freedom and flexibility to manipulate the state
-        this.service = service;
+        this.car = car;
     }
 
     public void getInformation(){
 //        Disadvantage. It is hard to ensure that all dependencies are provided before the client is used
-        if (service == null) {
+        if (car == null) {
             throw new InvalidParameterException("Service is null");
         }
         System.out.println("Setter injection client");
-        System.out.println(service.getInformation());
+        System.out.println(car.getInformation());
     }
 }

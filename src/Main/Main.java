@@ -3,7 +3,7 @@ package Main;
 import Main.clients.ConstructorInjectionClient;
 import Main.clients.NoInversionOfControl;
 import Main.clients.SetterInjectionClient;
-import Main.services.BasicService;
+import Main.cars.BasicCar;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,11 +11,11 @@ public class Main {
         noInversionOfControl.getInformation();
 
         //
-        ConstructorInjectionClient constructorInjectionClient = new ConstructorInjectionClient(new BasicService());
+        ConstructorInjectionClient constructorInjectionClient = new ConstructorInjectionClient(new BasicCar());
         constructorInjectionClient.getInformation();
 
         SetterInjectionClient setterInjectionClient = new SetterInjectionClient();
-        setterInjectionClient.setService(new BasicService());
+        setterInjectionClient.setCar(new BasicCar());
         setterInjectionClient.getInformation();
     }
 }
